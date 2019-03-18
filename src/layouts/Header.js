@@ -1,18 +1,23 @@
 import React, { Component } from "react";
 import logo from "../logo.svg";
 import styled from "styled-components";
+import { purple } from "../utilties";
+import { Elevation } from "../utilties";
 
-const Header = ({ className }) => {
-  return (
-    <Header className={className}>
-      <img src={logo} alt="logo" className="logo" />
-    </Header>
-  );
-};
+export default class Header extends Component {
+  render() {
+    return (
+      <AppHeader>
+        <img src={logo} alt="logo" className="logo" />
+      </AppHeader>
+    );
+  }
+}
 
-export default styled(Header)`
-  background: #524763;
-  padding: 10px 5%;
+const AppHeader = styled.header`
+  background: ${purple};
+  ${Elevation[2]}
+  padding: 10px;
   .logo {
     width: 60px;
   }
