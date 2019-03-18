@@ -1,8 +1,11 @@
 import { css } from "styled-components";
 
 //CSS helper
-export const fixedTop = css`
-  position: fixed;
-  top: ${({ top }) => top + "px"};
-  left: 0;
-`;
+
+export const fixed = ({ x = 0, y = 0 } = {}) => {
+  return css`
+    position: fixed;
+    top: ${y};
+    left: ${x};
+  `;
+};

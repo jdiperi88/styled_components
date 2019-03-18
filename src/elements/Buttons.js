@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fixedTop } from "../utilties";
+import { fixed } from "../utilties";
 const color = "indigo";
 export const Button = styled.button`
   background: ${color};
@@ -13,5 +13,5 @@ export const Button = styled.button`
 
 export const CancelButton = styled(Button)`
   background: purple;
-  ${fixedTop}
+  ${fixed}
 `;
