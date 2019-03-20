@@ -1,21 +1,32 @@
 import React, { Component } from "react";
 import Header from "./layouts/Header";
-import styled, { css } from "styled-components";
-import { Heading, Button, CancelButton } from "./elements";
+import { Heading, Button, Card } from "./elements";
 import GlobalStyle from "./Global";
-
+import { ThemeProvider } from "styled-components";
+const theme = {
+  colors: {
+    primary: "#e54b4b",
+    secondary: "blue"
+  }
+};
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <Heading>Header</Heading>
-        <Button>Save</Button>
-        <CancelButton top={200} type="cancel">
-          Cancel
-        </CancelButton>
-        <GlobalStyle />
-      </div>
+      <ThemeProvider theme={theme}>
+        <div>
+          <Header />
+          <main>
+            <Heading>Header</Heading>
+            <Card>
+              <h2>Card Heading</h2>
+              <Card.Button>Save</Card.Button>
+            </Card>
+
+            <Button modifiers={["small"]}>Cancel</Button>
+          </main>
+          <GlobalStyle />
+        </div>
+      </ThemeProvider>
     );
   }
 }
